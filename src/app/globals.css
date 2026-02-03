@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface text-white antialiased;
+}
+
+* {
+  scrollbar-color: #1f2937 transparent;
+  scrollbar-width: thin;
+}
+
+::selection {
+  background: rgba(96, 165, 250, 0.3);
+}
