@@ -36,7 +36,7 @@ else
     echo "✓ Email: $LOCAL_EMAIL"
     
     # Check if email looks valid
-    if [[ "$LOCAL_EMAIL" == *".local"* ]] || [[ "$LOCAL_EMAIL" != *"@"* ]]; then
+    if [[ "$LOCAL_EMAIL" == *".local" ]] || [[ "$LOCAL_EMAIL" != *"@"* ]]; then
         echo "⚠️  WARNING: This email looks like a local machine address!"
         echo "   It should be a GitHub-verified email address."
         echo "   Your commits may NOT appear in contribution history."
@@ -67,7 +67,7 @@ else
     echo "✓ Email: $GLOBAL_EMAIL"
     
     # Check if email looks valid
-    if [[ "$GLOBAL_EMAIL" == *".local"* ]] || [[ "$GLOBAL_EMAIL" != *"@"* ]]; then
+    if [[ "$GLOBAL_EMAIL" == *".local" ]] || [[ "$GLOBAL_EMAIL" != *"@"* ]]; then
         echo "⚠️  WARNING: This email looks like a local machine address!"
         echo "   It should be a GitHub-verified email address."
     fi
@@ -96,7 +96,7 @@ if [ -z "$LOCAL_EMAIL" ] && [ -z "$GLOBAL_EMAIL" ]; then
     echo ""
     echo "Use an email that is verified on GitHub!"
     echo "Find your GitHub emails at: https://github.com/settings/emails"
-elif [[ "$LOCAL_EMAIL" == *".local"* ]] || [[ "$GLOBAL_EMAIL" == *".local"* ]]; then
+elif [[ "$LOCAL_EMAIL" == *".local" ]] || [[ "$GLOBAL_EMAIL" == *".local" ]]; then
     echo "❌ Your email is set to a local machine address!"
     echo ""
     echo "This will NOT show up in GitHub contribution history."

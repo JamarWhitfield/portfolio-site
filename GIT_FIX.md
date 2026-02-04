@@ -18,23 +18,22 @@ Your commits are using this email: `jamarkwhitifeldjr@jamars-MacBook-Air.local`
 
 Go to: https://github.com/settings/emails
 
-Look for your **primary email** or your **GitHub no-reply email** (it looks like: `[numbers]+[username]@users.noreply.github.com`)
-
-For example, if your username is `JamarWhitfield`, it might be something like:
-- `135448779+JamarWhitfield@users.noreply.github.com`
+Look for your **primary email** or your **GitHub no-reply email** (it looks like: `[ID]+[username]@users.noreply.github.com`)
 
 ### Step 3: Update your git configuration
 
+Replace `Your Name` and the email with your actual information:
+
 **For this repository only:**
 ```bash
-git config user.name "Jamar Whitfield"
-git config user.email "135448779+JamarWhitfield@users.noreply.github.com"
+git config user.name "Your Name"
+git config user.email "[ID]+[username]@users.noreply.github.com"
 ```
 
 **Or, for all repositories on this machine:**
 ```bash
-git config --global user.name "Jamar Whitfield"
-git config --global user.email "135448779+JamarWhitfield@users.noreply.github.com"
+git config --global user.name "Your Name"
+git config --global user.email "[ID]+[username]@users.noreply.github.com"
 ```
 
 ### Step 4: Verify it worked
@@ -58,8 +57,9 @@ Your old commits with the wrong email **won't automatically update**. You have a
 If you just made a commit and want to fix it:
 ```bash
 git commit --amend --author="Your Name <your-github-email@example.com>"
-git push --force
+git push --force origin your-branch-name
 ```
+Replace `your-branch-name` with your actual branch name (e.g., `main` or `feature-branch`).
 
 ### Option 3: Rewrite all commits (Advanced - Be Careful!)
 ⚠️ Only do this if you're comfortable with git and no one else is working on your branch:
