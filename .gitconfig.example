@@ -1,0 +1,38 @@
+# Example Git Configuration for This Repository
+# Copy this file and customize it with your information
+#
+# To use this configuration for this repository only:
+#   git config user.name "Your Name"
+#   git config user.email "your-email@example.com"
+#
+# Or to use globally for all repositories:
+#   git config --global user.name "Your Name"
+#   git config --global user.email "your-email@example.com"
+
+[user]
+    # Your full name (as you want it to appear in commits)
+    name = Your Name
+    
+    # IMPORTANT: Use an email address that is:
+    # 1. Associated with your GitHub account
+    # 2. Verified on GitHub
+    #
+    # You can use your GitHub no-reply email:
+    # Find it at: https://github.com/settings/emails
+    # Format: [ID]+[username]@users.noreply.github.com
+    #
+    # Or use your verified personal email
+    email = your-email@example.com
+
+# Optional: Additional helpful git configurations
+[core]
+    # Automatically convert line endings
+    autocrlf = input
+    
+[pull]
+    # Use rebase instead of merge when pulling
+    rebase = false
+
+[init]
+    # Use 'main' as the default branch name
+    defaultBranch = main
