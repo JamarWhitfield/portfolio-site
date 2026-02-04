@@ -2,6 +2,18 @@
 
 A Next.js + Tailwind portfolio with an interactive graph-theory inspired background.
 
+## Important: Git Configuration
+
+⚠️ **Before contributing**, make sure your git is configured with a GitHub-verified email address, or your commits won't appear in your contribution history!
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed setup instructions.
+
+**Quick setup:**
+```bash
+git config user.name "Your Name"
+git config user.email "your-github-email@example.com"
+```
+
 ## Getting Started
 
 1. Install dependencies.
