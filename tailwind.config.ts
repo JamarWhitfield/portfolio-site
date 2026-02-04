@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "surface": "#0b0f1a",
-        "surface-2": "#111827",
-        "accent": "#60a5fa",
-        "accent-2": "#22d3ee"
+        "surface": "#0b0b0c",
+        "surface-2": "#111113",
+        "accent": "#e5e7eb",
+        "accent-2": "#cbd5f5"
       }
     }
   },
