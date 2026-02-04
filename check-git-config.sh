@@ -36,8 +36,12 @@ else
     echo "✓ Email: $LOCAL_EMAIL"
     
     # Check if email looks valid
-    if [[ "$LOCAL_EMAIL" == *".local" ]] || [[ "$LOCAL_EMAIL" != *"@"* ]]; then
-        echo "⚠️  WARNING: This email looks like a local machine address!"
+    if [[ "$LOCAL_EMAIL" != *"@"* ]]; then
+        echo "⚠️  WARNING: This email is missing the '@' symbol!"
+        echo "   It should be a valid GitHub-verified email address."
+        echo "   Your commits may NOT appear in contribution history."
+    elif [[ "$LOCAL_EMAIL" == *".local" ]]; then
+        echo "⚠️  WARNING: This email appears to be a local machine address!"
         echo "   It should be a GitHub-verified email address."
         echo "   Your commits may NOT appear in contribution history."
     elif [[ "$LOCAL_EMAIL" == *"@users.noreply.github.com" ]]; then
@@ -67,8 +71,11 @@ else
     echo "✓ Email: $GLOBAL_EMAIL"
     
     # Check if email looks valid
-    if [[ "$GLOBAL_EMAIL" == *".local" ]] || [[ "$GLOBAL_EMAIL" != *"@"* ]]; then
-        echo "⚠️  WARNING: This email looks like a local machine address!"
+    if [[ "$GLOBAL_EMAIL" != *"@"* ]]; then
+        echo "⚠️  WARNING: This email is missing the '@' symbol!"
+        echo "   It should be a valid GitHub-verified email address."
+    elif [[ "$GLOBAL_EMAIL" == *".local" ]]; then
+        echo "⚠️  WARNING: This email appears to be a local machine address!"
         echo "   It should be a GitHub-verified email address."
     fi
 fi
@@ -96,7 +103,16 @@ if [ -z "$LOCAL_EMAIL" ] && [ -z "$GLOBAL_EMAIL" ]; then
     echo ""
     echo "Use an email that is verified on GitHub!"
     echo "Find your GitHub emails at: https://github.com/settings/emails"
-elif [[ "$LOCAL_EMAIL" == *".local" ]] || [[ "$GLOBAL_EMAIL" == *".local" ]]; then
+elif { [ -n "$LOCAL_EMAIL" ] && [[ "$LOCAL_EMAIL" != *"@"* ]]; } || { [ -n "$GLOBAL_EMAIL" ] && [[ "$GLOBAL_EMAIL" != *"@"* ]]; }; then
+    echo "❌ Your email is malformed (missing '@' symbol)!"
+    echo ""
+    echo "This will NOT show up in GitHub contribution history."
+    echo "Update it to a valid GitHub-verified email:"
+    echo ""
+    echo "  git config user.email \"your-email@example.com\""
+    echo ""
+    echo "Find your GitHub emails at: https://github.com/settings/emails"
+elif { [ -n "$LOCAL_EMAIL" ] && [[ "$LOCAL_EMAIL" == *".local" ]]; } || { [ -n "$GLOBAL_EMAIL" ] && [[ "$GLOBAL_EMAIL" == *".local" ]]; }; then
     echo "❌ Your email is set to a local machine address!"
     echo ""
     echo "This will NOT show up in GitHub contribution history."
