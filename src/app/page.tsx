@@ -111,7 +111,7 @@ export default function Home() {
     <main className="relative">
       <header className="mx-auto w-full max-w-5xl px-8 py-10">
         <nav className="flex flex-wrap items-center justify-between gap-4 text-sm text-slate-300">
-          <span className="text-xs uppercase tracking-[0.45em] text-slate-400">JKW</span>
+          <span className="text-xs uppercase tracking-[0.45em] text-slate-400">JKWJR.</span>
           <div className="flex flex-wrap items-center gap-6">
             <a href="#about" className="transition hover:text-white">About</a>
             <a href="#skills" className="transition hover:text-white">Skills</a>
@@ -140,7 +140,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex h-20 w-20 items-center justify-center border border-slate-700 text-sm text-slate-300">
-            JKW
+            JKWJR.
           </div>
         </div>
       </section>
@@ -325,7 +325,7 @@ export default function Home() {
       </section>
 
       <footer className="mx-auto w-full max-w-5xl px-8 pb-12 text-xs uppercase tracking-[0.35em] text-slate-500">
-        2026 © JKW
+        2026 © JKWJR.
       </footer>
     </main>
   );
