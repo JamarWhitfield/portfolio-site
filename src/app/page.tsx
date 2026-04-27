@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
+import headshot from "../images/jamar-whitfield-866.jpg";
 
 const skills = {
   languages: ["Python", "JavaScript/TypeScript", "Bash", "SQL", "C++"],
@@ -11,15 +13,18 @@ const skills = {
 const projects = [
   {
     title: "Graph Theory Visualizer",
-    description: "Interactive algorithms and graph layouts for education and experimentation."
+    description: "Interactive algorithms and graph layouts for education and experimentation.",
+    github: "https://github.com/JamarWhitfield"
   },
   {
     title: "Research Toolkit",
-    description: "Reusable math utilities for modeling, simulation, and analysis."
+    description: "Reusable math utilities for modeling, simulation, and analysis.",
+    github: "https://github.com/JamarWhitfield"
   },
   {
     title: "Portfolio Platform",
-    description: "A sleek, data-driven web presence with custom visualization." 
+    description: "A sleek, data-driven web presence with custom visualization.",
+    github: "https://github.com/JamarWhitfield"
   }
 ];
 
@@ -66,14 +71,6 @@ const experience = [
   }
 ];
 
-const leadership = [
-  "LSU Vision Lab | Undergraduate Researcher",
-  "Applied Cybersecurity Lab | Undergraduate Researcher",
-  "National Society of Black Engineers | Member",
-  "Residential Assistant | Azalea Hall",
-  "TX-LA Mathematics Conference | Talk: Deep Learning for Frog Eggs Quantification (March 2024)"
-];
-
 export default function Home() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -102,18 +99,17 @@ export default function Home() {
       } else {
         setFormStatus("error");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("error");
     }
   };
 
   return (
     <main className="relative">
-      <header className="mx-auto w-full max-w-5xl px-8 py-10">
+      <header className="mx-auto w-full max-w-7xl px-8 py-10">
         <nav className="flex flex-wrap items-center justify-between gap-4 text-sm text-slate-300">
           <span className="text-xs uppercase tracking-[0.45em] text-slate-400">JKWJR.</span>
           <div className="flex flex-wrap items-center gap-6">
-            <a href="#about" className="transition hover:text-white">About</a>
             <a href="#skills" className="transition hover:text-white">Skills</a>
             <a href="#experience" className="transition hover:text-white">Experience</a>
             <a href="#projects" className="transition hover:text-white">Projects</a>
@@ -122,7 +118,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="mx-auto w-full max-w-5xl px-8 py-16">
+      <section className="mx-auto w-full max-w-7xl px-8 py-16">
         <div className="flex flex-col-reverse items-start justify-between gap-10 md:flex-row md:items-center">
           <div className="space-y-5">
             <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Portfolio</p>
@@ -130,50 +126,28 @@ export default function Home() {
               Jamar Keon Whitfield Jr
             </h1>
             <p className="text-lg text-slate-300">
-              Technical builder focused on security, data systems, and graph-inspired interfaces.
-              I study computer science and mathematics at LSU and enjoy making complex ideas
-              feel simple and useful.
+              I build end-to-end AI/ML products, from data pipelines and experiment tracking to Kubernetes deployment 
+              with autoscaling, monitoring, and safe model rollouts. CS + Math student at LSU with a security-first mindset, 
+              focused on systems you can trust in production.
             </p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-              <a href="#about" className="text-accent transition hover:text-white">More about me →</a>
               <a href="#contact" className="transition hover:text-white">Get in touch →</a>
             </div>
           </div>
-          <div className="flex h-20 w-20 items-center justify-center border border-slate-700 text-sm text-slate-300">
-            JKWJR.
+          <div className="relative aspect-square h-96 w-96 overflow-hidden rounded-3xl border border-slate-700">
+            <Image
+              src={headshot}
+              alt="Jamar Keon Whitfield Jr"
+              fill
+              sizes="(min-width: 1024px) 24rem, 80vw"
+              className="rounded-3xl object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      <section id="about" className="mx-auto w-full max-w-5xl px-8 py-12">
-        <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">About</h2>
-        <div className="mt-6 space-y-6 text-slate-200">
-          <p className="text-lg">
-            I focus on building systems where mathematical rigor meets human-centered design.
-            My work spans security operations, software engineering, data science, and research.
-          </p>
-          <div className="grid gap-8 pt-4 md:grid-cols-2">
-            <div className="text-sm text-slate-300">
-              <p className="text-xs uppercase tracking-[0.45em] text-slate-400">Focus</p>
-              <ul className="mt-3 space-y-2">
-                <li>Graph optimization and visualization</li>
-                <li>Algorithm design and analysis</li>
-                <li>Interactive web engineering</li>
-              </ul>
-            </div>
-            <div className="text-sm text-slate-300">
-              <p className="text-xs uppercase tracking-[0.45em] text-slate-400">Leadership</p>
-              <ul className="mt-3 space-y-2">
-                {leadership.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" className="mx-auto w-full max-w-5xl px-8 py-12">
+      <section id="skills" className="mx-auto w-full max-w-7xl px-8 py-12">
         <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">Skills</h2>
         <div className="mt-6 grid gap-8 md:grid-cols-3">
           <div>
@@ -203,42 +177,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="mx-auto w-full max-w-5xl px-8 py-12">
+      <section id="experience" className="mx-auto w-full max-w-7xl px-8 py-12">
         <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">Experience</h2>
-        <div className="mt-6 space-y-8">
-          {experience.map((item) => (
-            <article key={`${item.role}-${item.org}`} className="space-y-3">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold text-white">{item.role}</h3>
-                <span className="text-xs uppercase tracking-[0.35em] text-slate-500">
-                  {item.period}
-                </span>
-              </div>
-              <p className="text-sm text-slate-300">{item.org}</p>
-              <ul className="space-y-2 text-sm text-slate-200">
-                {item.highlights.map((highlight) => (
-                  <li key={highlight}>• {highlight}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+        <div className="mt-6">
+          <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
+            {experience.map((item) => (
+              <article
+                key={`${item.role}-${item.org}`}
+                className="min-w-[280px] max-w-md shrink-0 snap-start space-y-3 rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-semibold text-white">{item.role}</h3>
+                  <span className="text-xs uppercase tracking-[0.35em] text-slate-500">
+                    {item.period}
+                  </span>
+                </div>
+                <p className="text-sm text-slate-300">{item.org}</p>
+                <ul className="space-y-2 text-sm text-slate-200">
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight}>• {highlight}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="projects" className="mx-auto w-full max-w-5xl px-8 py-12">
-        <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">Highlighted Projects</h2>
-        <div className="mt-6 space-y-6">
+      <section id="projects" className="mx-auto w-full max-w-7xl px-8 py-12">
+        <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">Projects</h2>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.title} className="space-y-2">
-              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-              <p className="text-sm text-slate-300">{project.description}</p>
-              <button className="text-sm font-semibold text-accent">Learn more →</button>
+            <article
+              key={project.title}
+              className="flex h-full flex-col justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+            >
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                <p className="text-sm text-slate-300">{project.description}</p>
+              </div>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-white"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 fill-current">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.25.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 1.9 2.7 2.1.1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+                View on GitHub →
+              </a>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="contact" className="mx-auto w-full max-w-5xl px-8 py-12">
+      <section id="contact" className="mx-auto w-full max-w-7xl px-8 py-12">
         <h2 className="text-xs uppercase tracking-[0.45em] text-slate-400">Contact</h2>
         <div className="mt-6 space-y-6">
           <p className="text-lg text-slate-200">
@@ -290,6 +284,16 @@ export default function Home() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm text-slate-300">
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="border border-slate-700 bg-transparent px-4 py-3 text-base text-white outline-none ring-accent/40 focus:ring"
+                  placeholder="you@example.com"
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-slate-300">
                 Subject
                 <input
                   name="subject"
@@ -324,7 +328,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mx-auto w-full max-w-5xl px-8 pb-12 text-xs uppercase tracking-[0.35em] text-slate-500">
+      <footer className="mx-auto w-full max-w-7xl px-8 pb-12 text-xs uppercase tracking-[0.35em] text-slate-500">
         2026 © JKWJR.
       </footer>
     </main>
