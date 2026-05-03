@@ -38,13 +38,14 @@ git config user.email "your-github-email@example.com"
 1. Install dependencies.
 2. Run the development server.
 3. Open the local URL shown in the terminal.
-4. Run `npm run build` to verify the static export before pushing.
+4. Run `npm run build` to verify the production build before pushing.
+5. Run `npm start` only after `npm run build` if you want to preview the production server locally.
 
 ## Available Scripts
 
 - `npm run dev` — start the development server
-- `npm run build` — build for production
-- `npm run start` — run the production server
+- `npm run build` — build for production locally, or generate the static export in GitHub Actions
+- `npm run start` — run the local production server after building
 - `npm run lint` — run lint checks
 
 ## Customize Content

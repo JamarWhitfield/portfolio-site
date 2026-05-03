@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === "production";
+const isGithubPagesBuild = process.env.GITHUB_ACTIONS === "true";
 const repoName = "/portfolio-site";
 
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
+  output: isGithubPagesBuild ? "export" : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true
   },
-  basePath: isProduction ? repoName : "",
-  assetPrefix: isProduction ? repoName : undefined
+  basePath: isGithubPagesBuild ? repoName : "",
+  assetPrefix: isGithubPagesBuild ? repoName : undefined
 };
 
 export default nextConfig;

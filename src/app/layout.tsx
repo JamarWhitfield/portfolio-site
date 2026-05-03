@@ -4,7 +4,7 @@ import GraphBackground from "@/components/GraphBackground";
 
 export const metadata: Metadata = {
   title: "Jamar Whitfield | Portfolio",
-  description: "Mathematics and computer science portfolio."
+  description: "Portfolio of Jamar Whitfield, focused on machine learning systems, data infrastructure, backend engineering, and research-oriented software."
 };
 
 export default function RootLayout({

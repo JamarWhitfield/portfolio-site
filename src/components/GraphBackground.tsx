@@ -47,6 +47,11 @@ export default function GraphBackground() {
       }));
     };
 
+    const handleResize = () => {
+      resize();
+      initNodes();
+    };
+
     const handlePointerMove = (event: PointerEvent) => {
       mouseRef.current = {
         x: event.clientX,
@@ -77,10 +82,7 @@ export default function GraphBackground() {
     resize();
     initNodes();
 
-    window.addEventListener("resize", () => {
-      resize();
-      initNodes();
-    });
+    window.addEventListener("resize", handleResize);
 
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerleave", handlePointerLeave);
@@ -162,6 +164,7 @@ export default function GraphBackground() {
 
     return () => {
       window.cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
       window.removeEventListener("pointerdown", handlePointerDown);
@@ -169,7 +172,7 @@ export default function GraphBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div aria-hidden="true" className="fixed inset-0 -z-10">
       <canvas ref={canvasRef} className="h-full w-full" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
     </div>
