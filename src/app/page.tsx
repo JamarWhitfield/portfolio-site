@@ -163,6 +163,14 @@ export default function Home() {
                 Contact me
               </a>
               <a
+                href="resume/Jamar_Keon_Whitfield_Jr_Resume_Spring2026_V4.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-slate-200 transition hover:border-slate-500 hover:text-white"
+              >
+                View Resume
+              </a>
+              <a
                 href="https://github.com/JamarWhitfield"
                 target="_blank"
                 rel="noreferrer"
@@ -183,7 +191,7 @@ export default function Home() {
               </div>
               <div className={`${panelClassName} rounded-2xl px-4 py-4`}>
                 <p className="text-xs uppercase tracking-[0.28em] text-slate-500">Interests</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">Quant engineering, real-time systems, and research workflows.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-200">Computer vision, data engineering, ML systems, and real-time software.</p>
               </div>
             </div>
           </div>
