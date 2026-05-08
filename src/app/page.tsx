@@ -12,51 +12,85 @@ const skills = {
 
 const projects = [
   {
-    title: "Real-Time Pipeline Monitoring",
-    description: "Monitoring tooling for live ingestion workflows and sensor-driven analytics.",
-    stack: ["Python", "FastAPI", "PostgreSQL", "Docker"],
-    github: "https://github.com/JamarWhitfield"
+    title: "LSU Vision Lab Website",
+    description: "Built a multi-page responsive website for the LSU Vision Lab to present research, publications, and team profiles, using structured JSON-driven content and a clean, professional frontend architecture.",
+    period: "Feb 2026 - Apr 2026",
+    stack: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "JSON"],
+    highlights: [
+      "Created a JSON-driven people directory for dynamic team profile rendering.",
+      "Designed responsive pages for research, publications, and lab information.",
+      "Deployed a professional academic site with clean navigation and accessible structure."
+    ],
+    github: "https://github.com/JamarWhitfield/lsuvision",
+    viewSite: "https://jamarwhitfield.github.io/lsuvision/index.html"
   },
   {
-    title: "ML Research Toolkit",
-    description: "Reusable training and evaluation workflows for experimentation and model analysis.",
-    stack: ["PyTorch", "Python", "Bash", "AWS"],
-    github: "https://github.com/JamarWhitfield"
+    title: "Machine Learning and Spectral Analysis for CO2 Sensor Response",
+      description: "Built a Python pipeline to clean spectral sensor data, detect resonance features, and model CO2 response patterns.",
+  period: "Mar 2026 - Present",
+  stack: [
+    "Python",
+    "Machine Learning",
+    "Signal Processing",
+    "Spectral Analysis",
+    "scikit-learn"
+  ],
+  highlights: [
+    "Processed raw wavelength-transmittance data into structured datasets.",
+    "Applied signal smoothing and resonance dip detection techniques.",
+    "Evaluated baseline regression models for CO2 response analysis."
+  ],
+  github: "https://github.com/JamarWhitfield"
   },
   {
-    title: "Data Ingestion Migration Tooling",
-    description: "Automation for converting legacy pipeline configurations into standardized formats.",
-    stack: ["Python", "TypeScript", "SQL", "AWS"],
-    github: "https://github.com/JamarWhitfield"
+  title: "Microscopy Particle Segmentation Web App",
+  description: "Built a Flask web app for denoising microscopy images, segmenting particles, reviewing detections, and exporting measurements.",
+  period: "",
+  stack: [
+    "Python",
+    "Flask",
+    "Computer Vision",
+    "Image Processing",
+    "OpenCV",
+    "scikit-image"
+  ],
+  highlights: [
+    "Built a denoising and segmentation workflow for microscopy particle analysis.",
+    "Added an interactive review step for excluding, editing, and adding detections.",
+    "Generated overlays, histograms, and CSV exports for downstream reporting."
+  ],
+  github: "",
   },
   {
-    title: "Portfolio Platform",
-    description: "A lightweight portfolio with developer-focused design and production deployment.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/JamarWhitfield",
-    demo: "#"
+  title: "Internal Document QA Chatbot",
+  description: "Built a local document chatbot that indexes PDF and DOCX files, retrieves relevant chunks, and answers questions with cited sources.",
+  period: "Present",
+  stack: [
+    "React",
+    "FastAPI",
+    "SQLite",
+    "SQLAlchemy",
+    "Document Retrieval"
+  ],
+  highlights: [
+    "Built a PDF/DOCX upload pipeline with parsing, chunking, and SQLite storage.",
+    "Implemented grounded question answering with document-scoped retrieval and cited source chunks.",
+    "Added document management tools for upload, search, delete, and reindex actions."
+  ],
+  github: "https://github.com/JamarWhitfield"
   }
 ];
 
 const experience = [
   {
-    role: "SOC Analyst",
-    org: "Louisiana State University | Baton Rouge, LA",
-    period: "Aug 2025 – Present",
-    highlights: [
-      "Investigate security alerts and triage incidents across SOAR-driven workflows.",
-      "Correlate logs in Splunk and track indicators with clear operational documentation.",
-      "Improve repeatability in detection and response processes with structured playbooks."
-    ]
-  },
-  {
     role: "Software Engineering Intern",
     org: "Blue Origin | Kent, WA",
     period: "May 2025 – Aug 2025",
     highlights: [
-      "Built tooling to map legacy and modern ingestion configurations across internal systems.",
-      "Automated migration paths that standardized pipeline settings and reduced manual work.",
-      "Validated parity between old and new data flows before rollout."
+      "Automated mapping and comparison of configuration classes across legacy and modern ingestion frameworks to accelerate migration readiness for large-scale datasets.",
+      "Built translation scripts and validation tooling to convert legacy ingestion configs into a modern framework, reducing manual migration effort.",
+      "Designed repeatable test and data-validation workflows to compare outputs between pipelines, catching regressions early and improving production confidence.",
+      "Produced developer documentation and usage examples to support engineers migrating additional tables and data sources."
     ]
   },
   {
@@ -64,28 +98,41 @@ const experience = [
     org: "BASF Corporation | Geismar, LA",
     period: "May 2024 – Aug 2024",
     highlights: [
-      "Built a real-time pipeline for 25+ industrial sensors to support lifecycle analysis.",
-      "Shipped live monitoring tools for plant operators with production-facing visualization.",
-      "Integrated predictive models to surface sensor risk earlier and improve response time."
+      "Architected and implemented a scalable streaming data pipeline processing live feeds from 25+ sensors for lifecycle monitoring and analysis.",
+      "Developed a Streamlit web application for real-time visualization and monitoring, improving operational visibility for engineering teams.",
+      "Integrated machine learning models to predict sensor failures and surface early risk signals for review.",
+      "Built dashboards and trend views that reduced time-to-insight for complex live sensor data."
     ]
   },
   {
-    role: "Undergraduate Researcher - DeVision",
+    role: "Undergraduate Researcher – Vision Lab",
+    org: "LSU Vision Lab | Baton Rouge, LA",
+    period: "Aug 2025 – Present",
+    highlights: [
+      "Developed an online human-subject data collection platform for motion-only scene recognition experiments using Random-Dot Kinematogram video stimuli.",
+      "Transformed short videos into appearance-free motion stimuli to support human–AI comparison studies in visual perception.",
+      "Analyzed 2,600+ participant responses from 52 volunteers to evaluate recognition accuracy across noise levels and identify human–machine performance gaps.",
+      "Contributed to a research manuscript on MoVis, a framework for studying motion perception in humans and vision-language models."
+    ]
+  },
+  {
+    role: "Undergraduate Researcher – Computer Vision / Machine Learning",
     org: "LSU Mathematics Department | Baton Rouge, LA",
     period: "May 2023 – May 2024",
     highlights: [
-      "Developed CNN-based counting models for applied research workflows.",
-      "Integrated custom tooling that made ML outputs more usable in domain-specific software.",
-      "Optimized training on departmental compute resources and presented results externally."
+      "Developed and trained CNN-based computer vision models for frog egg counting, reducing manual counting time from days to minutes.",
+      "Improved model performance through preprocessing, augmentation, validation checks, and architecture experimentation.",
+      "Optimized model training on departmental supercomputing resources to accelerate experimentation.",
+      "Presented research findings at the 7th TX-LA Mathematics Conference."
     ]
   }
 ];
 
 const experienceSummary = [
-  "Builds ML systems with a bias toward reliable deployment and usable tooling.",
-  "Works across ingestion pipelines, backend services, and data infrastructure.",
-  "Brings research experience in model development and experimentation.",
-  "Applies a security operations mindset to monitoring, incident handling, and system trust."
+  "Builds production-minded data and software systems for research and engineering teams.",
+  "Works across streaming pipelines, validation tooling, and backend application workflows.",
+  "Brings active research experience in vision, motion perception, and machine learning.",
+  "Combines experimentation, documentation, and analysis to ship reliable technical work."
 ];
 
 const shellClassName = "mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10";
@@ -303,9 +350,24 @@ export default function Home() {
             >
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-base font-semibold text-white">{project.title}</h3>
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="text-base font-semibold text-white">{project.title}</h3>
+                    {project.period && (
+                      <span className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
+                        {project.period}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-sm leading-6 text-slate-300">{project.description}</p>
                 </div>
+                <ul className="space-y-2 text-sm leading-6 text-slate-200">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
                 <ul className="flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <li
@@ -331,14 +393,14 @@ export default function Home() {
                     GitHub
                   </a>
                 )}
-                {project.demo && project.demo !== "#" && (
+                {project.viewSite && (
                   <a
-                    href={project.demo}
+                    href={project.viewSite}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 transition group-hover:text-white hover:text-white"
                   >
-                    Live demo
+                    View Site
                   </a>
                 )}
               </div>
