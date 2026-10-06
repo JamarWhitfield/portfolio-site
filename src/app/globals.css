@@ -36,3 +36,22 @@ a {
 ::selection {
   background: rgba(96, 165, 250, 0.3);
 }
+
+:focus-visible {
+  outline: 2px solid rgba(226, 232, 240, 0.95);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

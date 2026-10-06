@@ -50,8 +50,10 @@ git config user.email "your-github-email@example.com"
 
 ## Customize Content
 
-Update the text in the homepage and swap in real project details.
-- Hero, About, Projects, Skills, Contact sections live in src/app/page.tsx.
-- Graph background behavior is in src/components/GraphBackground.tsx.
-
-Replace placeholder project entries and skills with real items.
+Portfolio content is split so the homepage stays easy to maintain.
+- Page structure and sections live in `src/app/page.tsx`.
+- Projects, experience, research, skills, and math/quant content live in `src/data/portfolio.ts`.
+- Contact form behavior lives in `src/components/ContactForm.tsx`.
+- Graph background behavior lives in `src/components/GraphBackground.tsx`.
+- SEO/social metadata lives in `src/app/layout.tsx`.
+- The remaining upgrade backlog is tracked in `PORTFOLIO_TODO.md`.
