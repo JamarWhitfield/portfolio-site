@@ -1,6 +1,7 @@
 import Image from "next/image";
 import headshot from "../images/jamar-whitfield-866.jpg";
 import ContactForm from "@/components/ContactForm";
+import { TrackedProject, TrackedResumeLink } from "@/components/AnalyticsTracking";
 import { experience, mathQuant, projects, research, skills } from "@/data/portfolio";
 
 const shellClassName = "mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10";
@@ -44,9 +45,10 @@ export default function Home() {
               <a href="#projects" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-slate-950 transition hover:bg-slate-200">
                 View Projects
               </a>
-              <a href="resume/Jamar_Keon_Whitfield_Jr_Resume_Spring2026_V4.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-slate-200 transition hover:border-slate-500 hover:text-white">
-                Resume
-              </a>
+              <TrackedResumeLink
+                href="resume/Jamar_Keon_Whitfield_Jr_Resume_Spring2026_V4.pdf"
+                className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-slate-200 transition hover:border-slate-500 hover:text-white"
+              />
               <a href="https://github.com/JamarWhitfield" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-slate-200 transition hover:border-slate-500 hover:text-white">
                 GitHub
               </a>
@@ -164,7 +166,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
-              <article key={project.title} className={`${panelClassName} group flex h-full flex-col justify-between gap-5 rounded-2xl p-5 transition duration-200 hover:-translate-y-1 hover:border-slate-600 hover:bg-slate-900/55`}>
+              <TrackedProject key={project.title} title={project.title} className={`${panelClassName} group flex h-full flex-col justify-between gap-5 rounded-2xl p-5 transition duration-200 hover:-translate-y-1 hover:border-slate-600 hover:bg-slate-900/55`}>
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -191,7 +193,7 @@ export default function Home() {
                   {"github" in project && project.github && <a href={project.github} target="_blank" rel="noreferrer" className="transition group-hover:text-white hover:text-white">GitHub</a>}
                   {"viewSite" in project && project.viewSite && <a href={project.viewSite} target="_blank" rel="noreferrer" className="transition group-hover:text-white hover:text-white">View Site</a>}
                 </div>
-              </article>
+              </TrackedProject>
             ))}
           </div>
         </div>

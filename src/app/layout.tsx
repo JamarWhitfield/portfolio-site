@@ -1,8 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import GraphBackground from "@/components/GraphBackground";
 
 const siteUrl = "https://jamarwhitfield.github.io/portfolio-site/";
+const googleAnalyticsId = "G-T6C14KMLPB";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -46,6 +48,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-surface text-white">
         <GraphBackground />
         <div className="relative z-10">{children}</div>
+        {googleAnalyticsId && (
+          <>
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', ${JSON.stringify(googleAnalyticsId)});`}
+            </Script>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+              strategy="afterInteractive"
+            />
+          </>
+        )}
       </body>
     </html>
   );
