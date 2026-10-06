@@ -32,7 +32,7 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.42em] text-slate-400">Jamar Whitfield Jr.</p>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
-                  Computer scientist building ML systems, research software, and quantitative tools.
+                  Building ML systems and quantitative tools
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
                   Computer Science graduate and Mathematics student at LSU with experience across production data systems, backend engineering, computer vision research, and scientific machine learning.
